@@ -5,4 +5,3 @@
 This is a small project with the help of chatgpt and youtube. My purpose is to learn a little about HTML, CSS and JS.
 ---
 Here is the web: https://baoduong254.github.io/SnakeGameWeb/
----
