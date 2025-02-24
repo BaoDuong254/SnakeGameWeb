@@ -1,6 +1,12 @@
 const canvas = document.getElementById("snakeCanvas");
 const ctx = canvas.getContext("2d");
-
+let repoName = window.location.pathname.split("/")[1]; // Lấy tên repo từ URL
+let basePath;
+if (repoName === "index.html") {
+	basePath = "/assets/image/";
+} else {
+	basePath = `/${repoName}/assets/image/`;
+}
 const boxSize = 20;
 let snake = [{ x: 10, y: 10 }];
 let food = { x: 15, y: 15 };
@@ -13,10 +19,10 @@ let gameRunning = false; // Biến để theo dõi trạng thái của trò chơ
 let playerName = "Anonymous";
 
 const snakeImage = new Image();
-snakeImage.src = "/assets/image/snake.png"; // Thay đổi đường dẫn đến hình ảnh của con rắn
+snakeImage.src = `${basePath}snake.png`; // Thay đổi đường dẫn đến hình ảnh của con rắn
 
 const foodImage = new Image();
-foodImage.src = "/assets/image/apple.png"; // Thay đổi đường dẫn đến hình ảnh của thức ăn
+foodImage.src = `${basePath}apple.png`; // Thay đổi đường dẫn đến hình ảnh của thức ăn
 
 function toggleGame() {
 	if (gameRunning) {
